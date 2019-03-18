@@ -18,40 +18,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtE-xt-tdW">
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OtE-xt-tdW">
                                 <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="OtE-xt-tdW" secondAttribute="height" multiplier="1:1" id="v9t-6D-CZj"/>
                                 </constraints>
                                 <color key="tintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Button">
+                                <state key="normal" title="Record">
                                     <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
+                                <connections>
+                                    <action selector="recordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vf-Wy-ETZ"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi7-Be-jHY">
-                                <rect key="frame" x="150" y="433.5" width="75" height="75"/>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi7-Be-jHY">
+                                <rect key="frame" x="212" y="358" width="75" height="75"/>
                                 <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Pi7-Be-jHY" secondAttribute="height" multiplier="1:1" id="Ks5-PF-q81"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Play"/>
+                                <connections>
+                                    <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qde-O2-lSe"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="2pp-BJ-8qF"/>
-                            <constraint firstItem="Pi7-Be-jHY" firstAttribute="top" secondItem="OtE-xt-tdW" secondAttribute="bottom" id="6GC-GT-Mbs"/>
+                            <constraint firstItem="Pi7-Be-jHY" firstAttribute="top" secondItem="OtE-xt-tdW" secondAttribute="bottom" constant="-75.5" id="6GC-GT-Mbs"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IIq-Zk-H9E"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="nkT-ci-q9k"/>
-                            <constraint firstItem="Pi7-Be-jHY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="saA-Pr-1jz"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t94-AP-WpR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pi7-Be-jHY" secondAttribute="trailing" constant="88" id="tAC-G7-D5G"/>
+                            <constraint firstItem="Pi7-Be-jHY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yLz-zV-9AP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="playButtonOutlet" destination="Pi7-Be-jHY" id="QF9-Kt-6Qn"/>
                         <outlet property="recordButtonOutlet" destination="OtE-xt-tdW" id="n5q-qL-LVD"/>
-                        <outlet property="stopButtonOutlet" destination="Pi7-Be-jHY" id="QF9-Kt-6Qn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
