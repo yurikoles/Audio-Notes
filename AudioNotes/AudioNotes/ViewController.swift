@@ -48,7 +48,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         override func viewDidLoad() {
         super.viewDidLoad()
             
-            playButtonOutlet.isEnabled = false
+            
             setupRecorder()
     }
     
@@ -58,13 +58,17 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     }
     
     
+    
+    
+    
+    // Функция сохраняющая файл в директорию
     func getDocumetnsDirector() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         return paths[0]
     }
     
-    
     func setupRecorder(){
+        
         let audioFileName = getDocumetnsDirector().appendingPathComponent(fileName)
         let recordSetting = [AVFormatIDKey : kAudioFormatAppleLossless,
                              AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
@@ -75,7 +79,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         do {
             soundRecorder = try AVAudioRecorder(url: audioFileName, settings: recordSetting)
             soundRecorder.delegate = self
-            soundRecorder.prepareToRecord()
+            soundRecorder.prepareToRecord()     //метод подготовки записи: создает файл и готовится к записи
         }
         catch{
             print(error)
@@ -87,20 +91,18 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         let audioFileName = getDocumetnsDirector().appendingPathComponent(fileName)
         print(audioFileName)
         do {
-            soundPlayer = try AVAudioPlayer(contentsOf: audioFileName)
+            soundPlayer = try AVAudioPlayer(contentsOf: audioFileName) //какой воспроизводим файл
             soundPlayer.delegate = self
-            soundPlayer.prepareToPlay()
+            soundPlayer.prepareToPlay() //функция воспроизведения звука
             soundPlayer.volume = 1
         }
         catch {
             print(error)
         }
     }
-    
-    
-    
-    
+
     func settingUI() {
+        playButtonOutlet.isEnabled = false
         recordButtonOutlet.layer.cornerRadius = recordButtonOutlet.frame.size.height/2
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height/2
     }
