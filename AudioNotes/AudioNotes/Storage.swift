@@ -9,6 +9,13 @@
 import Foundation
 class Storage  {
     
+    static var shared = Storage()
     
+    var numberOfRecords : Int = 0
+    {
+        didSet{
+            print(numberOfRecords)
+        }
+    }
     
 }

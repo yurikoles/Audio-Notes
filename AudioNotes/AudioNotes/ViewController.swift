@@ -11,7 +11,10 @@ import AVFoundation
 
 
 class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
-
+    
+    @IBAction func clearAllAudio(_ sender: UIButton) {
+        Storage.shared.numberOfRecords = 0
+    }
     @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var recordButtonOutlet: UIButton!
     @IBOutlet weak var timerMinuteLabel: UILabel!
@@ -30,7 +33,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             soundRecorder.stop()
             recordButtonOutlet.setTitle("Record", for: .normal)
             playButtonOutlet.isEnabled = false
-            UserDefaults.standard.set(numberOfRecords, forKey: "audioCount")
+            UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")
             timer.invalidate()
             
         }
@@ -45,7 +48,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             timer.invalidate()
             time = 0
             timeUISettin()
-         
+            
         } else {
             soundPlayer.stop()
             playButtonOutlet.setTitle("Play", for: .normal)
@@ -59,22 +62,17 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     var timer = Timer()
     var time = 0
     
-
-    var numberOfRecords : Int = 0
-    {
-        didSet{
-            print(numberOfRecords)
-        }
-    }
+    
+    
     var fileName : String = "audioFile.m4a"
     
-        override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
-           
-            if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
-                numberOfRecords = number
-            }
-            
+        
+        if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
+            Storage.shared.numberOfRecords = number
+        }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,12 +84,12 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     func getDocumetnsDirector() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
-            return paths[0]
+        return paths[0]
     }
     
     func setupRecorder(){
-        numberOfRecords += 1
-        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(numberOfRecords).m4a")
+        Storage.shared.numberOfRecords += 1
+        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(Storage.shared.numberOfRecords).m4a")
         let recordSetting = [AVFormatIDKey : kAudioFormatAppleLossless,
                              AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
                              AVEncoderBitRateKey : 320000,
@@ -110,7 +108,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     func setupPlayer() {
         
-        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(numberOfRecords).m4a")
+        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(Storage.shared.numberOfRecords).m4a")
         print(audioFileName)
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: audioFileName) //какой воспроизводим файл
@@ -122,7 +120,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             print(error)
         }
     }
-
+    
     func settingUI() {
         playButtonOutlet.isEnabled = false
         recordButtonOutlet.layer.cornerRadius = recordButtonOutlet.frame.size.height/2

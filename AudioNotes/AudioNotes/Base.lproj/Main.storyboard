@@ -63,6 +63,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lv-lO-Bno">
+                                <rect key="frame" x="182" y="160.5" width="11" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="D66-cF-UHY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6h-LH-e2a">
                                 <rect key="frame" x="201" y="160.5" width="64" height="33"/>
                                 <constraints>
@@ -73,20 +82,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lv-lO-Bno">
-                                <rect key="frame" x="182" y="160.5" width="11" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rns-vh-Tjd">
+                                <rect key="frame" x="142.5" y="617" width="90" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.98431372549999996" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="D66-cF-UHY"/>
+                                    <constraint firstAttribute="height" constant="30" id="9CE-tw-TTl"/>
+                                    <constraint firstAttribute="width" constant="90" id="caD-18-MUM"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Clear all"/>
+                                <connections>
+                                    <action selector="clearAllAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YNU-9j-ps4"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rns-vh-Tjd" secondAttribute="bottom" constant="20" id="1Kd-kL-cA8"/>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="2pp-BJ-8qF"/>
                             <constraint firstItem="GyJ-lF-nYi" firstAttribute="width" secondItem="Pi7-Be-jHY" secondAttribute="width" id="3NB-1o-0YD"/>
+                            <constraint firstItem="Rns-vh-Tjd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4JX-TD-sRD"/>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="top" secondItem="OtE-xt-tdW" secondAttribute="bottom" constant="-75.5" id="6GC-GT-Mbs"/>
                             <constraint firstItem="GyJ-lF-nYi" firstAttribute="height" secondItem="Pi7-Be-jHY" secondAttribute="height" id="Evu-Ah-uHj"/>
                             <constraint firstItem="6lv-lO-Bno" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HFP-Fi-ADx"/>
