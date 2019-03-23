@@ -34,7 +34,7 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var count = Storage.shared.numberOfRecords + 1
+        var count = Storage.shared.numberOfRecords
         return count
     }
     

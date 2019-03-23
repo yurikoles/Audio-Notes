@@ -14,6 +14,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     @IBAction func clearAllAudio(_ sender: UIButton) {
         Storage.shared.numberOfRecords = 0
+        UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")
     }
     @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var recordButtonOutlet: UIButton!
