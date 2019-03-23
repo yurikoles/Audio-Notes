@@ -53,6 +53,35 @@
                                     <segue destination="aUt-Jx-jPw" kind="show" identifier="audioLisrSegue" id="lXz-ss-osj"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrY-dy-dra">
+                                <rect key="frame" x="111" y="160.5" width="64" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="nZY-TH-bq4"/>
+                                    <constraint firstAttribute="width" constant="64" id="xD6-kf-td0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6h-LH-e2a">
+                                <rect key="frame" x="201" y="160.5" width="64" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="1Xm-mA-cmg"/>
+                                    <constraint firstAttribute="height" constant="33" id="Cmt-fy-sbl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6lv-lO-Bno">
+                                <rect key="frame" x="182" y="160.5" width="11" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="D66-cF-UHY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -60,13 +89,22 @@
                             <constraint firstItem="GyJ-lF-nYi" firstAttribute="width" secondItem="Pi7-Be-jHY" secondAttribute="width" id="3NB-1o-0YD"/>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="top" secondItem="OtE-xt-tdW" secondAttribute="bottom" constant="-75.5" id="6GC-GT-Mbs"/>
                             <constraint firstItem="GyJ-lF-nYi" firstAttribute="height" secondItem="Pi7-Be-jHY" secondAttribute="height" id="Evu-Ah-uHj"/>
+                            <constraint firstItem="6lv-lO-Bno" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HFP-Fi-ADx"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IIq-Zk-H9E"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m6h-LH-e2a" secondAttribute="trailing" constant="110" id="KG3-9x-yod"/>
+                            <constraint firstItem="OtE-xt-tdW" firstAttribute="top" secondItem="zrY-dy-dra" secondAttribute="bottom" constant="40" id="OSk-PN-N2o"/>
+                            <constraint firstItem="6lv-lO-Bno" firstAttribute="leading" secondItem="zrY-dy-dra" secondAttribute="trailing" constant="7" id="TAF-e4-wID"/>
+                            <constraint firstItem="OtE-xt-tdW" firstAttribute="top" secondItem="6lv-lO-Bno" secondAttribute="bottom" constant="40" id="fEC-Pt-9V2"/>
                             <constraint firstItem="GyJ-lF-nYi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hHD-1g-drj"/>
+                            <constraint firstItem="zrY-dy-dra" firstAttribute="width" secondItem="m6h-LH-e2a" secondAttribute="width" id="hmJ-Ca-fKC"/>
+                            <constraint firstItem="zrY-dy-dra" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="la5-tJ-Shc"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="nkT-ci-q9k"/>
                             <constraint firstItem="GyJ-lF-nYi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oel-6q-cAi"/>
                             <constraint firstItem="GyJ-lF-nYi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="szQ-9t-gfX"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t94-AP-WpR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pi7-Be-jHY" secondAttribute="trailing" constant="88" id="tAC-G7-D5G"/>
+                            <constraint firstItem="OtE-xt-tdW" firstAttribute="top" secondItem="m6h-LH-e2a" secondAttribute="bottom" constant="40" id="tFY-7s-Swm"/>
+                            <constraint firstItem="m6h-LH-e2a" firstAttribute="leading" secondItem="6lv-lO-Bno" secondAttribute="trailing" constant="8" symbolic="YES" id="uM0-Ax-CJz"/>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yLz-zV-9AP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -74,11 +112,22 @@
                     <connections>
                         <outlet property="playButtonOutlet" destination="Pi7-Be-jHY" id="QF9-Kt-6Qn"/>
                         <outlet property="recordButtonOutlet" destination="OtE-xt-tdW" id="n5q-qL-LVD"/>
+                        <outlet property="timerMinuteLabel" destination="zrY-dy-dra" id="A3G-yv-Igs"/>
+                        <outlet property="timerSecondLabel" destination="m6h-LH-e2a" id="o60-ZM-U4T"/>
                     </connections>
                 </viewController>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ob5-XH-d8V">
+                    <rect key="frame" x="0.0" y="0.0" width="17" height="33"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="33" id="nRw-4u-xO2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="30"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-145" y="29"/>
+            <point key="canvasLocation" x="-146.40000000000001" y="28.335832083958024"/>
         </scene>
         <!--Audio List View Controller-->
         <scene sceneID="YZg-NF-fYX">

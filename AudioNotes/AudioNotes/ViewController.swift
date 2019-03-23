@@ -14,18 +14,25 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
 
     @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var recordButtonOutlet: UIButton!
-
+    @IBOutlet weak var timerMinuteLabel: UILabel!
+    @IBOutlet weak var timerSecondLabel: UILabel!
+    
     @IBAction func recordAction (_ sender: Any){
         if recordButtonOutlet.titleLabel?.text == "Record" {
             setupRecorder()
             soundRecorder.record()
             recordButtonOutlet.setTitle("Stop", for: .normal)
             playButtonOutlet.isEnabled = false
+            
+            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
+            
         } else {
             soundRecorder.stop()
             recordButtonOutlet.setTitle("Record", for: .normal)
             playButtonOutlet.isEnabled = false
             UserDefaults.standard.set(numberOfRecords, forKey: "audioCount")
+            timer.invalidate()
+            
         }
         
     }
@@ -35,15 +42,23 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             recordButtonOutlet.isEnabled = false
             setupPlayer()
             soundPlayer.play()
+            timer.invalidate()
+            time = 0
+            timeUISettin()
+         
         } else {
             soundPlayer.stop()
             playButtonOutlet.setTitle("Play", for: .normal)
             recordButtonOutlet.isEnabled = false
+            
         }
     }
     
     var soundRecorder : AVAudioRecorder!
     var soundPlayer : AVAudioPlayer!
+    var timer = Timer()
+    var time = 0
+    
 
     var numberOfRecords : Int = 0
     {
@@ -55,7 +70,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
         override func viewDidLoad() {
         super.viewDidLoad()
-            
+           
             if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
                 numberOfRecords = number
             }
@@ -72,7 +87,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
         
             return paths[0]
-
     }
     
     func setupRecorder(){
@@ -125,6 +139,18 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         
     }
     
+    @objc private func timerDidEnded() {
+        
+        time += 1
+        timeUISettin()
+    }
     
+    func timeUISettin(){
+        
+        let second = time%60
+        let minute = (time/60)%60
+        timerSecondLabel.text = String(second)
+        timerMinuteLabel.text = String(minute)
+    }
 }
 
