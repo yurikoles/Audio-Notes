@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C74C1A22246059F00CFBD80 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */; };
+		1C74C1A42246094100CFBD80 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */; };
 		1CDC99B8223EB2DC0046CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */; };
 		1CDC99BA223EB2DC0046CEBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC99B9223EB2DC0046CEBD /* ViewController.swift */; };
 		1CDC99BD223EB2DC0046CEBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CDC99BB223EB2DC0046CEBD /* Main.storyboard */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
+		1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		1CDC99B4223EB2DC0046CEBD /* AudioNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CDC99B9223EB2DC0046CEBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 			children = (
 				1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */,
 				1CDC99B9223EB2DC0046CEBD /* ViewController.swift */,
+				1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */,
+				1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */,
 				1CDC99BB223EB2DC0046CEBD /* Main.storyboard */,
 				1CDC99C1223EB2DE0046CEBD /* Assets.xcassets */,
 				1CDC99C3223EB2DE0046CEBD /* LaunchScreen.storyboard */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C74C1A42246094100CFBD80 /* CollectionViewCell.swift in Sources */,
 				1CDC99BA223EB2DC0046CEBD /* ViewController.swift in Sources */,
+				1C74C1A22246059F00CFBD80 /* AudioListViewController.swift in Sources */,
 				1CDC99B8223EB2DC0046CEBD /* AppDelegate.swift in Sources */,
 				1CDC99C0223EB2DC0046CEBD /* AudioNotes.xcdatamodeld in Sources */,
 			);

@@ -43,13 +43,28 @@
                                     <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qde-O2-lSe"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyJ-lF-nYi">
+                                <rect key="frame" x="284" y="20" width="75" height="75"/>
+                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Список">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="aUt-Jx-jPw" kind="show" identifier="audioLisrSegue" id="lXz-ss-osj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="2pp-BJ-8qF"/>
+                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="width" secondItem="Pi7-Be-jHY" secondAttribute="width" id="3NB-1o-0YD"/>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="top" secondItem="OtE-xt-tdW" secondAttribute="bottom" constant="-75.5" id="6GC-GT-Mbs"/>
+                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="height" secondItem="Pi7-Be-jHY" secondAttribute="height" id="Evu-Ah-uHj"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IIq-Zk-H9E"/>
+                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hHD-1g-drj"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="nkT-ci-q9k"/>
+                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oel-6q-cAi"/>
+                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="szQ-9t-gfX"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t94-AP-WpR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pi7-Be-jHY" secondAttribute="trailing" constant="88" id="tAC-G7-D5G"/>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yLz-zV-9AP"/>
@@ -63,7 +78,68 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53.600000000000001" y="26.53673163418291"/>
+            <point key="canvasLocation" x="-145" y="29"/>
+        </scene>
+        <!--Audio List View Controller-->
+        <scene sceneID="YZg-NF-fYX">
+            <objects>
+                <viewController id="aUt-Jx-jPw" customClass="AudioListViewController" customModule="AudioNotes" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mz9-1g-lxE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-Uo-pKm">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qiJ-LP-jx6">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="20" minY="20" maxX="20" maxY="20"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="bn4-Bu-PHL" customClass="CollectionViewCell" customModule="AudioNotes" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgv-SW-KHI">
+                                                    <rect key="frame" x="29" y="39.5" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Zgv-SW-KHI" firstAttribute="centerX" secondItem="bn4-Bu-PHL" secondAttribute="centerX" id="NVR-oS-K2o"/>
+                                            <constraint firstItem="Zgv-SW-KHI" firstAttribute="centerY" secondItem="bn4-Bu-PHL" secondAttribute="centerY" id="WNs-YZ-wib"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="audioCellLabel" destination="Zgv-SW-KHI" id="pnv-JB-r1r"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="QcA-Uo-pKm" firstAttribute="trailing" secondItem="dyc-aW-X6i" secondAttribute="trailing" id="2Ic-FY-rzD"/>
+                            <constraint firstItem="QcA-Uo-pKm" firstAttribute="top" secondItem="dyc-aW-X6i" secondAttribute="top" id="ch3-qc-YiT"/>
+                            <constraint firstItem="QcA-Uo-pKm" firstAttribute="leading" secondItem="dyc-aW-X6i" secondAttribute="leading" id="fYz-ay-7YX"/>
+                            <constraint firstItem="QcA-Uo-pKm" firstAttribute="bottom" secondItem="dyc-aW-X6i" secondAttribute="bottom" id="qwm-Ic-9iA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="dyc-aW-X6i"/>
+                    </view>
+                    <connections>
+                        <outlet property="audioCollection" destination="QcA-Uo-pKm" id="7ts-Lv-yaA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3M2-cF-yPu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="838" y="28"/>
         </scene>
     </scenes>
 </document>

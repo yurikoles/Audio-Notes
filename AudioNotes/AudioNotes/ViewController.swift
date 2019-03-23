@@ -17,6 +17,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
 
     @IBAction func recordAction (_ sender: Any){
         if recordButtonOutlet.titleLabel?.text == "Record" {
+            setupRecorder()
             soundRecorder.record()
             recordButtonOutlet.setTitle("Stop", for: .normal)
             playButtonOutlet.isEnabled = false
@@ -24,6 +25,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             soundRecorder.stop()
             recordButtonOutlet.setTitle("Record", for: .normal)
             playButtonOutlet.isEnabled = false
+            UserDefaults.standard.set(numberOfRecords, forKey: "audioCount")
         }
         
     }
@@ -42,14 +44,22 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     var soundRecorder : AVAudioRecorder!
     var soundPlayer : AVAudioPlayer!
-    
+
+    var numberOfRecords : Int = 0
+    {
+        didSet{
+            print(numberOfRecords)
+        }
+    }
     var fileName : String = "audioFile.m4a"
     
         override func viewDidLoad() {
         super.viewDidLoad()
             
+            if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
+                numberOfRecords = number
+            }
             
-            setupRecorder()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,19 +67,17 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         settingUI()
     }
     
-    
-    
-    
-    
     // Функция сохраняющая файл в директорию
     func getDocumetnsDirector() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
+        
+            return paths[0]
+
     }
     
     func setupRecorder(){
-        
-        let audioFileName = getDocumetnsDirector().appendingPathComponent(fileName)
+        numberOfRecords += 1
+        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(numberOfRecords).m4a")
         let recordSetting = [AVFormatIDKey : kAudioFormatAppleLossless,
                              AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
                              AVEncoderBitRateKey : 320000,
@@ -79,7 +87,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         do {
             soundRecorder = try AVAudioRecorder(url: audioFileName, settings: recordSetting)
             soundRecorder.delegate = self
-            soundRecorder.prepareToRecord()     //метод подготовки записи: создает файл и готовится к записи
+            soundRecorder.prepareToRecord()  //метод подготовки записи: создает файл и готовится к записи
         }
         catch{
             print(error)
@@ -88,7 +96,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     func setupPlayer() {
         
-        let audioFileName = getDocumetnsDirector().appendingPathComponent(fileName)
+        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(numberOfRecords).m4a")
         print(audioFileName)
         do {
             soundPlayer = try AVAudioPlayer(contentsOf: audioFileName) //какой воспроизводим файл
@@ -116,5 +124,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         playButtonOutlet.setTitle("Play", for: .normal)
         
     }
+    
+    
 }
 
