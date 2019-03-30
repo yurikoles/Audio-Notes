@@ -12,6 +12,8 @@ import AVFoundation
 
 class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
+    @IBOutlet weak var settingAudioViewController: UIView!
+    
     @IBAction func clearAllAudio(_ sender: UIButton) {
         Storage.shared.numberOfRecords = 0
         UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")
@@ -34,8 +36,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             soundRecorder.stop()
             recordButtonOutlet.setTitle("Record", for: .normal)
             playButtonOutlet.isEnabled = true
-            
-            UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")
+            settingAudioViewController.isHidden = false
+            UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")//сохранение кол-во записей
             timer.invalidate()
             
         }
@@ -71,6 +73,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     override func viewDidLoad() {
         super.viewDidLoad()
             playButtonOutlet.isEnabled = false
+            settingAudioViewController.isHidden = true
               if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
             Storage.shared.numberOfRecords = number
         }

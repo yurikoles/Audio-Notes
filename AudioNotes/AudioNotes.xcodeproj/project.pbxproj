@@ -10,6 +10,7 @@
 		1C74C1A22246059F00CFBD80 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */; };
 		1C74C1A42246094100CFBD80 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */; };
 		1C74C1A622466B4F00CFBD80 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A522466B4F00CFBD80 /* Storage.swift */; };
+		1CB4AE36224FABE90078373B /* SettingAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */; };
 		1CDC99B8223EB2DC0046CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */; };
 		1CDC99BA223EB2DC0046CEBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC99B9223EB2DC0046CEBD /* ViewController.swift */; };
 		1CDC99BD223EB2DC0046CEBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CDC99BB223EB2DC0046CEBD /* Main.storyboard */; };
@@ -22,6 +23,7 @@
 		1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
 		1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		1C74C1A522466B4F00CFBD80 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAudioViewController.swift; sourceTree = "<group>"; };
 		1CDC99B4223EB2DC0046CEBD /* AudioNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CDC99B9223EB2DC0046CEBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */,
 				1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */,
 				1CDC99BB223EB2DC0046CEBD /* Main.storyboard */,
+				1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */,
 				1CDC99C1223EB2DE0046CEBD /* Assets.xcassets */,
 				1CDC99C3223EB2DE0046CEBD /* LaunchScreen.storyboard */,
 				1CDC99C6223EB2DE0046CEBD /* Info.plist */,
@@ -151,6 +154,7 @@
 				1C74C1A622466B4F00CFBD80 /* Storage.swift in Sources */,
 				1CDC99BA223EB2DC0046CEBD /* ViewController.swift in Sources */,
 				1C74C1A22246059F00CFBD80 /* AudioListViewController.swift in Sources */,
+				1CB4AE36224FABE90078373B /* SettingAudioViewController.swift in Sources */,
 				1CDC99B8223EB2DC0046CEBD /* AppDelegate.swift in Sources */,
 				1CDC99C0223EB2DC0046CEBD /* AudioNotes.xcdatamodeld in Sources */,
 			);
