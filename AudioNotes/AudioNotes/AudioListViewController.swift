@@ -15,6 +15,7 @@ class AudioListViewController: UIViewController {
     @IBOutlet weak var audioCollection: UICollectionView!
     
     let vc = ViewController()
+    //let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,7 @@ class AudioListViewController: UIViewController {
         audioCollection.delegate = self
         audioCollection.dataSource = self
         
-        
-        
+      
         // Do any additional setup after loading the view.
     }
     
@@ -34,7 +34,7 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
     
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        var count = Storage.shared.numberOfRecords
+        let count = Storage.shared.numberOfRecords
         return count
     }
     

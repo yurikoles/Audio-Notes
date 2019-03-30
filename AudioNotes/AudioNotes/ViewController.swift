@@ -33,7 +33,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         } else {
             soundRecorder.stop()
             recordButtonOutlet.setTitle("Record", for: .normal)
-            playButtonOutlet.isEnabled = false
+            playButtonOutlet.isEnabled = true
+            
             UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")
             timer.invalidate()
             
@@ -69,15 +70,26 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
+            playButtonOutlet.isEnabled = false
+              if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
             Storage.shared.numberOfRecords = number
         }
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+//        settingUI()
+        
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
+        
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
         settingUI()
     }
     
@@ -123,13 +135,14 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     }
     
     func settingUI() {
-        playButtonOutlet.isEnabled = false
+       // playButtonOutlet.isEnabled = false
         recordButtonOutlet.layer.cornerRadius = recordButtonOutlet.frame.size.height/2
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height/2
+       
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        playButtonOutlet.isEnabled = true
+        //playButtonOutlet.isEnabled = true
     }
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
