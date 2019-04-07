@@ -59,4 +59,30 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
         }
     }
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    
+        return 1
+    }
+    
+    
+//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+//        
+//        var reusableview = UICollectionReusableView()
+//        if (kind == UICollectionView.elementKindSectionHeader) {
+//            let section = indexPath.section
+//            switch (section) {
+//            case 1:
+//                let  firstheader : OfferHeaderCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "OfferHeaderCell", for: indexPath) as! OfferHeaderCell
+//                reusableview = firstheader
+//            case 2:
+//                let  secondHeader : APRHeaderCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "APRHeaderCell", for: indexPath) as! APRHeaderCell
+//                reusableview = secondHeader
+//            default:
+//                return reusableview
+//                
+//            }
+//        }
+//        return reusableview
+//    }
+    
 }

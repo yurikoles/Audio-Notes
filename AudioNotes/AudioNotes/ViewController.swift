@@ -12,12 +12,13 @@ import AVFoundation
 
 class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
-    @IBOutlet weak var settingAudioViewController: UIView!
+    @IBOutlet weak var settingAudioView: UIView!
     
     @IBAction func clearAllAudio(_ sender: UIButton) {
         Storage.shared.numberOfRecords = 0
         UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")
     }
+    
     @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var recordButtonOutlet: UIButton!
     @IBOutlet weak var timerMinuteLabel: UILabel!
@@ -36,9 +37,11 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             soundRecorder.stop()
             recordButtonOutlet.setTitle("Record", for: .normal)
             playButtonOutlet.isEnabled = true
-            settingAudioViewController.isHidden = false
+            settingAudioView.isHidden = false
             UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")//сохранение кол-во записей
             timer.invalidate()
+           // self.add(settingAudioViewController) -  доделать
+            
             
         }
         
@@ -65,6 +68,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     var soundPlayer : AVAudioPlayer!
     var timer = Timer()
     var time = 0
+    var settingAudioViewController = SettingAudioViewController()
     
     
     
@@ -73,16 +77,19 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     override func viewDidLoad() {
         super.viewDidLoad()
             playButtonOutlet.isEnabled = false
-            settingAudioViewController.isHidden = true
+            settingAudioView.isHidden = true
               if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
             Storage.shared.numberOfRecords = number
         }
+        
+       
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-//        settingUI()
+        
+        
         
     }
     
@@ -169,3 +176,5 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     }
 }
 
+
+ 

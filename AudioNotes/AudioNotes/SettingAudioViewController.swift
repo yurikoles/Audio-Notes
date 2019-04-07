@@ -11,8 +11,22 @@ import UIKit
 class SettingAudioViewController: UIViewController {
 
     @IBAction func CloseView(_ sender: UIButton) {
-        view.isHidden = true
+        
+        DispatchQueue.main.async {
+            
+            self.remove()
+            //self.view.isUserInteractionEnabled = false
+            self.view.isHidden = true
+          
+            
+//            self.view.removeFromParentViewController()
+            
+        
+        }
+        
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

@@ -135,7 +135,7 @@
                     <connections>
                         <outlet property="playButtonOutlet" destination="Pi7-Be-jHY" id="QF9-Kt-6Qn"/>
                         <outlet property="recordButtonOutlet" destination="OtE-xt-tdW" id="n5q-qL-LVD"/>
-                        <outlet property="settingAudioViewController" destination="HDM-TU-N2Q" id="ECZ-aB-tqh"/>
+                        <outlet property="settingAudioView" destination="HDM-TU-N2Q" id="ECZ-aB-tqh"/>
                         <outlet property="timerMinuteLabel" destination="zrY-dy-dra" id="A3G-yv-Igs"/>
                         <outlet property="timerSecondLabel" destination="m6h-LH-e2a" id="o60-ZM-U4T"/>
                     </connections>
