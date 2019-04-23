@@ -52,9 +52,20 @@
 		1C9DEB8F226F7D14007956BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				1C74C1A522466B4F00CFBD80 /* Storage.swift */,
 				1C9DEB90226F7D6D007956BD /* WorkerAudioFile.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		1C9DEB92226F8080007956BD /* Support File */ = {
+			isa = PBXGroup;
+			children = (
+				1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */,
+				1CDC99C3223EB2DE0046CEBD /* LaunchScreen.storyboard */,
+				1CDC99C1223EB2DE0046CEBD /* Assets.xcassets */,
+			);
+			path = "Support File";
 			sourceTree = "<group>";
 		};
 		1CDC99AB223EB2DC0046CEBD = {
@@ -76,19 +87,16 @@
 		1CDC99B6223EB2DC0046CEBD /* AudioNotes */ = {
 			isa = PBXGroup;
 			children = (
-				1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */,
 				1CDC99B9223EB2DC0046CEBD /* ViewController.swift */,
-				1CB8349E225A7EFC00CE6260 /* Extension.swift */,
-				1C74C1A522466B4F00CFBD80 /* Storage.swift */,
-				1C9DEB8F226F7D14007956BD /* Model */,
 				1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */,
 				1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */,
-				1CDC99BB223EB2DC0046CEBD /* Main.storyboard */,
 				1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */,
-				1CDC99C1223EB2DE0046CEBD /* Assets.xcassets */,
-				1CDC99C3223EB2DE0046CEBD /* LaunchScreen.storyboard */,
-				1CDC99C6223EB2DE0046CEBD /* Info.plist */,
+				1CDC99BB223EB2DC0046CEBD /* Main.storyboard */,
+				1CB8349E225A7EFC00CE6260 /* Extension.swift */,
+				1C9DEB8F226F7D14007956BD /* Model */,
+				1C9DEB92226F8080007956BD /* Support File */,
 				1CDC99BE223EB2DC0046CEBD /* AudioNotes.xcdatamodeld */,
+				1CDC99C6223EB2DE0046CEBD /* Info.plist */,
 			);
 			path = AudioNotes;
 			sourceTree = "<group>";

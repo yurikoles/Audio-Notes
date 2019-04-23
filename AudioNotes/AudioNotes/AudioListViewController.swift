@@ -15,17 +15,13 @@ class AudioListViewController: UIViewController {
     @IBOutlet weak var audioCollection: UICollectionView!
     
     let vc = ViewController()
-    //let leftSwipe = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipe(sender:)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.audioCollection.reloadData()
         audioCollection.delegate = self
         audioCollection.dataSource = self
-        
-      
-        // Do any additional setup after loading the view.
-    }
+        }
     
 }
 
@@ -34,14 +30,21 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
 
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        let count = Storage.shared.numberOfRecords
-        return count
+        
+        if section == 0 {
+            
+            let count = Storage.shared.numberOfRecords
+            return count
+        }else{
+            return 3}
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.audioCellLabel.text = String(indexPath.row+1)
         cell.backgroundColor = UIColor.green
+
         return cell
     }
     
@@ -61,28 +64,11 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
     
-        return 1
+        return 2
+        
     }
     
     
-//    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-//        
-//        var reusableview = UICollectionReusableView()
-//        if (kind == UICollectionView.elementKindSectionHeader) {
-//            let section = indexPath.section
-//            switch (section) {
-//            case 1:
-//                let  firstheader : OfferHeaderCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "OfferHeaderCell", for: indexPath) as! OfferHeaderCell
-//                reusableview = firstheader
-//            case 2:
-//                let  secondHeader : APRHeaderCell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "APRHeaderCell", for: indexPath) as! APRHeaderCell
-//                reusableview = secondHeader
-//            default:
-//                return reusableview
-//                
-//            }
-//        }
-//        return reusableview
-//    }
+
     
 }
