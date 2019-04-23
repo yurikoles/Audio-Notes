@@ -10,6 +10,7 @@
 		1C74C1A22246059F00CFBD80 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */; };
 		1C74C1A42246094100CFBD80 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */; };
 		1C74C1A622466B4F00CFBD80 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A522466B4F00CFBD80 /* Storage.swift */; };
+		1C9DEB91226F7D6D007956BD /* WorkerAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DEB90226F7D6D007956BD /* WorkerAudioFile.swift */; };
 		1CB4AE36224FABE90078373B /* SettingAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */; };
 		1CB8349F225A7EFC00CE6260 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8349E225A7EFC00CE6260 /* Extension.swift */; };
 		1CDC99B8223EB2DC0046CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */; };
@@ -24,6 +25,7 @@
 		1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
 		1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		1C74C1A522466B4F00CFBD80 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		1C9DEB90226F7D6D007956BD /* WorkerAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerAudioFile.swift; sourceTree = "<group>"; };
 		1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAudioViewController.swift; sourceTree = "<group>"; };
 		1CB8349E225A7EFC00CE6260 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		1CDC99B4223EB2DC0046CEBD /* AudioNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -47,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C9DEB8F226F7D14007956BD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1C9DEB90226F7D6D007956BD /* WorkerAudioFile.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1CDC99AB223EB2DC0046CEBD = {
 			isa = PBXGroup;
 			children = (
@@ -70,6 +80,7 @@
 				1CDC99B9223EB2DC0046CEBD /* ViewController.swift */,
 				1CB8349E225A7EFC00CE6260 /* Extension.swift */,
 				1C74C1A522466B4F00CFBD80 /* Storage.swift */,
+				1C9DEB8F226F7D14007956BD /* Model */,
 				1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */,
 				1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */,
 				1CDC99BB223EB2DC0046CEBD /* Main.storyboard */,
@@ -155,6 +166,7 @@
 			files = (
 				1C74C1A42246094100CFBD80 /* CollectionViewCell.swift in Sources */,
 				1C74C1A622466B4F00CFBD80 /* Storage.swift in Sources */,
+				1C9DEB91226F7D6D007956BD /* WorkerAudioFile.swift in Sources */,
 				1CDC99BA223EB2DC0046CEBD /* ViewController.swift in Sources */,
 				1C74C1A22246059F00CFBD80 /* AudioListViewController.swift in Sources */,
 				1CB4AE36224FABE90078373B /* SettingAudioViewController.swift in Sources */,

@@ -9,7 +9,8 @@
 import UIKit
 
 class SettingAudioViewController: UIViewController {
-
+    @IBOutlet weak var CloseViewOutlet: UIButton!
+    
     @IBAction func CloseView(_ sender: UIButton) {
         
         DispatchQueue.main.async {
@@ -18,9 +19,6 @@ class SettingAudioViewController: UIViewController {
             //self.view.isUserInteractionEnabled = false
             self.view.isHidden = true
           
-            
-//            self.view.removeFromParentViewController()
-            
         
         }
         
@@ -30,6 +28,7 @@ class SettingAudioViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print("123")
         // Do any additional setup after loading the view.
     }
     

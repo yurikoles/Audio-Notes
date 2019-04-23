@@ -25,26 +25,26 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBOutlet weak var timerSecondLabel: UILabel!
     
     @IBAction func recordAction (_ sender: Any){
-        if recordButtonOutlet.titleLabel?.text == "Record" {
-            setupRecorder()
-            soundRecorder.record()
-            recordButtonOutlet.setTitle("Stop", for: .normal)
-            playButtonOutlet.isEnabled = false
-            
-            timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerDidEnded), userInfo: nil, repeats: true)
-            
-        } else {
-            soundRecorder.stop()
-            recordButtonOutlet.setTitle("Record", for: .normal)
-            playButtonOutlet.isEnabled = true
-            settingAudioView.isHidden = false
-            UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")//сохранение кол-во записей
-            timer.invalidate()
-           // self.add(settingAudioViewController) -  доделать
-            
-            
-        }
         
+        if recordButtonOutlet.titleLabel?.text == "Record" {
+             DispatchQueue.main.async {
+                self.setupRecorder()
+                self.soundRecorder.record()
+                self.recordButtonOutlet.setTitle("Stop", for: .normal)
+                self.playButtonOutlet.isEnabled = false
+                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerDidEnded), userInfo: nil, repeats: true)}
+        } else {
+            
+            // DispatchQueue.main.async {
+                self.soundRecorder.stop()
+                self.add(self.settingAudioViewController)
+                self.recordButtonOutlet.setTitle("Record", for: .normal)
+                self.playButtonOutlet.isEnabled = true
+                self.settingAudioView.isHidden = false
+            UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")//сохранение кол-во записей
+                self.timer.invalidate()
+           // }
+        }
     }
     @IBAction func playAction (_ sender: Any){
         if playButtonOutlet.titleLabel?.text == "Play" {
@@ -69,34 +69,26 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     var timer = Timer()
     var time = 0
     var settingAudioViewController = SettingAudioViewController()
-    
-    
-    
     var fileName : String = "audioFile.m4a"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
             playButtonOutlet.isEnabled = false
             settingAudioView.isHidden = true
+        
               if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
             Storage.shared.numberOfRecords = number
         }
-        
-       
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        
-        
     }
     
     override func viewWillLayoutSubviews() {
