@@ -15,12 +15,14 @@ class AudioListViewController: UIViewController {
     @IBOutlet weak var audioCollection: UICollectionView!
     
     let vc = ViewController()
+    let workerAudioFile = WorkerAudioFile();
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.audioCollection.reloadData()
         audioCollection.delegate = self
         audioCollection.dataSource = self
+//        audioCollection.
         }
     
 }
@@ -44,6 +46,7 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         cell.audioCellLabel.text = String(indexPath.row+1)
         cell.backgroundColor = UIColor.green
+        
 
         return cell
     }
@@ -51,12 +54,12 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("tab \(indexPath.row+1)")
         
-        let path = vc.getDocumetnsDirector().appendingPathComponent("Records\(indexPath.row+1).m4a")
+        let path = workerAudioFile.getDocumetnsDirector().appendingPathComponent("Records\(indexPath.row+1).m4a")
         
         do
         {
-            vc.soundPlayer = try AVAudioPlayer(contentsOf: path)
-            vc.soundPlayer.play()
+            workerAudioFile.soundPlayer = try AVAudioPlayer(contentsOf: path)
+            workerAudioFile.soundPlayer.play()
         }catch{
             
         }
@@ -67,6 +70,8 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
         return 2
         
     }
+    
+
     
     
 

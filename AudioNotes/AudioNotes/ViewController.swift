@@ -27,16 +27,18 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBAction func recordAction (_ sender: Any){
         
         if recordButtonOutlet.titleLabel?.text == "Record" {
+            
+                self.workerAudioFile.setupRecorder(viewController: self)
+                self.workerAudioFile.soundRecorder.record()
              DispatchQueue.main.async {
-                self.setupRecorder()
-                self.soundRecorder.record()
                 self.recordButtonOutlet.setTitle("Stop", for: .normal)
                 self.playButtonOutlet.isEnabled = false
-                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerDidEnded), userInfo: nil, repeats: true)}
+            }
+                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerDidEnded), userInfo: nil, repeats: true)
         } else {
             
             // DispatchQueue.main.async {
-                self.soundRecorder.stop()
+                self.workerAudioFile.soundRecorder.stop()
                 self.add(self.settingAudioViewController)
                 self.recordButtonOutlet.setTitle("Record", for: .normal)
                 self.playButtonOutlet.isEnabled = true
@@ -50,26 +52,25 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         if playButtonOutlet.titleLabel?.text == "Play" {
             playButtonOutlet.setTitle("Stop", for: .normal)
             recordButtonOutlet.isEnabled = false
-            setupPlayer()
-            soundPlayer.play()
+            self.workerAudioFile.setupPlayer(viewController: self)
+            workerAudioFile.soundPlayer.play()
             timer.invalidate()
             time = 0
             timeUISettin()
             
         } else {
-            soundPlayer.stop()
+            workerAudioFile.soundPlayer.stop()
             playButtonOutlet.setTitle("Play", for: .normal)
             recordButtonOutlet.isEnabled = false
             
         }
     }
     
-    var soundRecorder : AVAudioRecorder!
-    var soundPlayer : AVAudioPlayer!
+
     var timer = Timer()
     var time = 0
     var settingAudioViewController = SettingAudioViewController()
-    var fileName : String = "audioFile.m4a"
+    var workerAudioFile = WorkerAudioFile()
     
     
     override func viewDidLoad() {
@@ -95,46 +96,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         settingUI()
     }
     
-    // Функция сохраняющая файл в директорию
-    func getDocumetnsDirector() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        
-        return paths[0]
-    }
     
-    func setupRecorder(){
-        Storage.shared.numberOfRecords += 1
-        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(Storage.shared.numberOfRecords).m4a")
-        let recordSetting = [AVFormatIDKey : kAudioFormatAppleLossless,
-                             AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
-                             AVEncoderBitRateKey : 320000,
-                             AVNumberOfChannelsKey: 2,
-                             AVSampleRateKey : 44100.2] as [String : Any]
-        
-        do {
-            soundRecorder = try AVAudioRecorder(url: audioFileName, settings: recordSetting)
-            soundRecorder.delegate = self
-            soundRecorder.prepareToRecord()  //метод подготовки записи: создает файл и готовится к записи
-        }
-        catch{
-            print(error)
-        }
-    }
     
-    func setupPlayer() {
-        
-        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(Storage.shared.numberOfRecords).m4a")
-        print(audioFileName)
-        do {
-            soundPlayer = try AVAudioPlayer(contentsOf: audioFileName) //какой воспроизводим файл
-            soundPlayer.delegate = self
-            soundPlayer.prepareToPlay() //функция воспроизведения звука
-            soundPlayer.volume = 1
-        }
-        catch {
-            print(error)
-        }
-    }
     
     func settingUI() {
        // playButtonOutlet.isEnabled = false
