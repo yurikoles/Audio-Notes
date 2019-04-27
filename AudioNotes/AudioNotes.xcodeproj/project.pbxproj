@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C70A48B2274935000F4AD33 /* CollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C70A48A2274935000F4AD33 /* CollectionReusableView.swift */; };
 		1C74C1A22246059F00CFBD80 /* AudioListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */; };
 		1C74C1A42246094100CFBD80 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */; };
 		1C74C1A622466B4F00CFBD80 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A522466B4F00CFBD80 /* Storage.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C70A48A2274935000F4AD33 /* CollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionReusableView.swift; sourceTree = "<group>"; };
 		1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioListViewController.swift; sourceTree = "<group>"; };
 		1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		1C74C1A522466B4F00CFBD80 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
@@ -49,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C70A489227492F400F4AD33 /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */,
+				1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */,
+				1C70A48A2274935000F4AD33 /* CollectionReusableView.swift */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
 		1C9DEB8F226F7D14007956BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -88,8 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				1CDC99B9223EB2DC0046CEBD /* ViewController.swift */,
-				1C74C1A12246059F00CFBD80 /* AudioListViewController.swift */,
-				1C74C1A32246094100CFBD80 /* CollectionViewCell.swift */,
+				1C70A489227492F400F4AD33 /* CollectionView */,
 				1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */,
 				1CDC99BB223EB2DC0046CEBD /* Main.storyboard */,
 				1CB8349E225A7EFC00CE6260 /* Extension.swift */,
@@ -175,6 +186,7 @@
 				1C74C1A42246094100CFBD80 /* CollectionViewCell.swift in Sources */,
 				1C74C1A622466B4F00CFBD80 /* Storage.swift in Sources */,
 				1C9DEB91226F7D6D007956BD /* WorkerAudioFile.swift in Sources */,
+				1C70A48B2274935000F4AD33 /* CollectionReusableView.swift in Sources */,
 				1CDC99BA223EB2DC0046CEBD /* ViewController.swift in Sources */,
 				1C74C1A22246059F00CFBD80 /* AudioListViewController.swift in Sources */,
 				1CB4AE36224FABE90078373B /* SettingAudioViewController.swift in Sources */,

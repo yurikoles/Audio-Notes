@@ -71,9 +71,17 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
         
     }
     
+  //  - MARK : Header section in collectionView
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
 
-    
-    
+        if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CollectionReusableView", for: indexPath)
+            as? CollectionReusableView{
+            sectionHeader.sectionHeaderlabel.text = "Section \(indexPath.section)"
+            return sectionHeader
+        }
+        return UICollectionReusableView()
+
+    }
 
     
 }
