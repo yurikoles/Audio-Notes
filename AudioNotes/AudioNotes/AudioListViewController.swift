@@ -17,7 +17,9 @@ class AudioListViewController: UIViewController {
     
     
     
-    @IBAction func addThemesButton(_ sender: Any) {callingAlert()}
+    @IBAction func addThemesButton(_ sender: Any) {callingAlert()
+        
+    }
     
     let vc = ViewController()
     let workerAudioFile = WorkerAudioFile();
@@ -75,7 +77,8 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {
     
-        return 2
+        return Storage.shared.themes.count
+        
         
     }
     
@@ -84,7 +87,8 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
 
         if let sectionHeader = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "CollectionReusableView", for: indexPath)
             as? CollectionReusableView{
-            sectionHeader.sectionHeaderlabel.text = "Section \(indexPath.section)"
+            sectionHeader.sectionHeaderlabel.text = Storage.shared.themes[indexPath.section] // заголовок секций
+//            sectionHeader.sectionHeaderlabel.text = "Section \(indexPath.section)"
             return sectionHeader
         }
         return UICollectionReusableView()
@@ -101,7 +105,7 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
             
             if alertController.textFields != nil && alertController.textFields![0].text != nil {
                 Storage.shared.themes.append(String(alertController.textFields![0].text!))     }
-            
+            self.audioCollection.reloadData()
         }
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (UIAlertAction) in
             print("cancel")
@@ -112,6 +116,7 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
         
         
         self.present(alertController, animated: true , completion: nil)
+        
     }
     
 }
