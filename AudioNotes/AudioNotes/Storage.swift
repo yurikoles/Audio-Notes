@@ -18,4 +18,10 @@ class Storage  {
         }
     }
     
+    var themes : [String] = []
+    {
+        didSet{
+            print(themes)
+        }
+    }
 }

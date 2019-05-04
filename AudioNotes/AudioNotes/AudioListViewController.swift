@@ -12,19 +12,27 @@ import AVFoundation
 class AudioListViewController: UIViewController {
     
     
+    @IBOutlet weak var addThemsOutlet: UIButton!
     @IBOutlet weak var audioCollection: UICollectionView!
+    
+    
+    
+    @IBAction func addThemesButton(_ sender: Any) {callingAlert()}
     
     let vc = ViewController()
     let workerAudioFile = WorkerAudioFile();
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addThemsOutlet.layer.cornerRadius = addThemsOutlet.frame.size.height/2
         self.audioCollection.reloadData()
         audioCollection.delegate = self
         audioCollection.dataSource = self
 //        audioCollection.
         }
     
+    
+ 
 }
 
 
@@ -38,7 +46,7 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
             let count = Storage.shared.numberOfRecords
             return count
         }else{
-            return 3}
+            return 5}
         
     }
     
@@ -83,5 +91,27 @@ extension AudioListViewController : UICollectionViewDelegate,UICollectionViewDat
 
     }
 
+    private func callingAlert(){
+        let alertController = UIAlertController(title: "Новая тема", message: "Напишите название новой темы", preferredStyle: .alert)
+        
+        alertController.addTextField()
+        
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (UIAlertAction) in
+            print("save")
+            
+            if alertController.textFields != nil && alertController.textFields![0].text != nil {
+                Storage.shared.themes.append(String(alertController.textFields![0].text!))     }
+            
+        }
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel) { (UIAlertAction) in
+            print("cancel")
+        }
+        
+        alertController.addAction(okAction)
+        alertController.addAction(cancelAction)
+        
+        
+        self.present(alertController, animated: true , completion: nil)
+    }
     
 }

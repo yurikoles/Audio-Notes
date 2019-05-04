@@ -26,7 +26,7 @@
                                 </constraints>
                                 <color key="tintColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Record">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                 </state>
                                 <connections>
                                     <action selector="recordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vf-Wy-ETZ"/>
@@ -46,8 +46,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyJ-lF-nYi">
                                 <rect key="frame" x="284" y="44" width="75" height="75"/>
                                 <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title=" List">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Список">
+                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <segue destination="aUt-Jx-jPw" kind="show" identifier="audioLisrSegue" id="lXz-ss-osj"/>
@@ -135,7 +135,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="audioListOutlet" destination="GyJ-lF-nYi" id="gzk-P1-z8G"/>
+                        <outlet property="audioListOutlet" destination="GyJ-lF-nYi" id="8va-hT-NuI"/>
                         <outlet property="playButtonOutlet" destination="Pi7-Be-jHY" id="QF9-Kt-6Qn"/>
                         <outlet property="recordButtonOutlet" destination="OtE-xt-tdW" id="n5q-qL-LVD"/>
                         <outlet property="settingAudioView" destination="HDM-TU-N2Q" id="ECZ-aB-tqh"/>
@@ -165,7 +165,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QcA-Uo-pKm">
-                                <rect key="frame" x="0.0" y="44" width="375" height="734"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="666"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qiJ-LP-jx6">
                                     <size key="itemSize" width="100" height="100"/>
@@ -225,14 +225,32 @@
                                     </connections>
                                 </collectionReusableView>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jv0-Cp-fko">
+                                <rect key="frame" x="152" y="703" width="70" height="69"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="MqS-Xz-I8v"/>
+                                    <constraint firstAttribute="width" secondItem="Jv0-Cp-fko" secondAttribute="height" multiplier="1:1" constant="1" id="cTc-Uq-MJZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="addThemesButton:" destination="aUt-Jx-jPw" eventType="touchUpInside" id="IZj-wW-xj3"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="QcA-Uo-pKm" firstAttribute="trailing" secondItem="dyc-aW-X6i" secondAttribute="trailing" id="2Ic-FY-rzD"/>
+                            <constraint firstItem="dyc-aW-X6i" firstAttribute="trailing" secondItem="Jv0-Cp-fko" secondAttribute="trailing" constant="153" id="2zv-Vv-FhF"/>
+                            <constraint firstItem="dyc-aW-X6i" firstAttribute="bottom" secondItem="Jv0-Cp-fko" secondAttribute="bottom" constant="6" id="7wJ-5b-e94"/>
+                            <constraint firstItem="Jv0-Cp-fko" firstAttribute="leading" secondItem="dyc-aW-X6i" secondAttribute="leading" constant="152" id="G5j-88-daZ"/>
                             <constraint firstItem="QcA-Uo-pKm" firstAttribute="top" secondItem="dyc-aW-X6i" secondAttribute="top" id="ch3-qc-YiT"/>
                             <constraint firstItem="QcA-Uo-pKm" firstAttribute="leading" secondItem="dyc-aW-X6i" secondAttribute="leading" id="fYz-ay-7YX"/>
-                            <constraint firstItem="QcA-Uo-pKm" firstAttribute="bottom" secondItem="dyc-aW-X6i" secondAttribute="bottom" id="qwm-Ic-9iA"/>
+                            <constraint firstItem="dyc-aW-X6i" firstAttribute="bottom" secondItem="QcA-Uo-pKm" secondAttribute="bottom" constant="68" id="o4r-ae-ZSa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dyc-aW-X6i"/>
                         <connections>
@@ -240,6 +258,7 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="addThemsOutlet" destination="Jv0-Cp-fko" id="F5G-BD-3Lk"/>
                         <outlet property="audioCollection" destination="QcA-Uo-pKm" id="7ts-Lv-yaA"/>
                     </connections>
                 </viewController>
@@ -250,7 +269,7 @@
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="838" y="28"/>
+            <point key="canvasLocation" x="837.60000000000002" y="27.339901477832512"/>
         </scene>
         <!--Setting Audio View Controller-->
         <scene sceneID="rfA-tG-jC8">
