@@ -12,6 +12,7 @@ import AVFoundation
 
 class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     
+    @IBOutlet weak var audioListOutlet: UIButton!
     @IBOutlet weak var settingAudioView: UIView!
     
     @IBAction func clearAllAudio(_ sender: UIButton) {
@@ -27,25 +28,23 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBAction func recordAction (_ sender: Any){
         
         if recordButtonOutlet.titleLabel?.text == "Record" {
-            
+            DispatchQueue.main.async {
                 self.workerAudioFile.setupRecorder(viewController: self)
                 self.workerAudioFile.soundRecorder.record()
-             DispatchQueue.main.async {
                 self.recordButtonOutlet.setTitle("Stop", for: .normal)
                 self.playButtonOutlet.isEnabled = false
             }
-                self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerDidEnded), userInfo: nil, repeats: true)
+            self.timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.timerDidEnded), userInfo: nil, repeats: true)
         } else {
-            
-            // DispatchQueue.main.async {
-                self.workerAudioFile.soundRecorder.stop()
-                self.add(self.settingAudioViewController)
-                self.recordButtonOutlet.setTitle("Record", for: .normal)
-                self.playButtonOutlet.isEnabled = true
-                self.settingAudioView.isHidden = false
+              DispatchQueue.main.async {
+            self.workerAudioFile.soundRecorder.stop()
+            self.add(self.settingAudioViewController)
+            self.recordButtonOutlet.setTitle("Record", for: .normal)
+            self.settingAudioView.isHidden = false
+                
+            }
             UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")//сохранение кол-во записей
-                self.timer.invalidate()
-           // }
+            self.timer.invalidate()
         }
     }
     @IBAction func playAction (_ sender: Any){
@@ -66,7 +65,7 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         }
     }
     
-
+    
     var timer = Timer()
     var time = 0
     var settingAudioViewController = SettingAudioViewController()
@@ -75,10 +74,10 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            playButtonOutlet.isEnabled = false
-            settingAudioView.isHidden = true
+        playButtonOutlet.isEnabled = false
+        settingAudioView.isHidden = true
         
-              if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
+        if let number : Int = UserDefaults.standard.object(forKey: "audioCount") as? Int{
             Storage.shared.numberOfRecords = number
         }
         
@@ -100,10 +99,11 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     
     func settingUI() {
-       // playButtonOutlet.isEnabled = false
+        // playButtonOutlet.isEnabled = false
         recordButtonOutlet.layer.cornerRadius = recordButtonOutlet.frame.size.height/2
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height/2
-       
+        audioListOutlet.layer.cornerRadius = audioListOutlet.frame.size.height/2
+        
     }
     
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
@@ -132,4 +132,4 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
 }
 
 
- 
+

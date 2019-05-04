@@ -100,10 +100,10 @@
 			isa = PBXGroup;
 			children = (
 				1CDC99B9223EB2DC0046CEBD /* ViewController.swift */,
-				1C70A489227492F400F4AD33 /* CollectionView */,
 				1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */,
 				1CDC99BB223EB2DC0046CEBD /* Main.storyboard */,
 				1CB8349E225A7EFC00CE6260 /* Extension.swift */,
+				1C70A489227492F400F4AD33 /* CollectionView */,
 				1C9DEB8F226F7D14007956BD /* Model */,
 				1C9DEB92226F8080007956BD /* Support File */,
 				1CDC99BE223EB2DC0046CEBD /* AudioNotes.xcdatamodeld */,

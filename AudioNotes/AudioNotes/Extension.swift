@@ -12,6 +12,7 @@ extension UIViewController {
     
     func add(_ child: UIViewController) {
         addChild(child)
+        view.insertSubview(child.view, aboveSubview: self.view)
         view.addSubview(child.view)
         child.didMove(toParent: self)
     }
