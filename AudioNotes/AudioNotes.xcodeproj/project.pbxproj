@@ -13,7 +13,7 @@
 		1C74C1A622466B4F00CFBD80 /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C74C1A522466B4F00CFBD80 /* Storage.swift */; };
 		1C9DEB91226F7D6D007956BD /* WorkerAudioFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C9DEB90226F7D6D007956BD /* WorkerAudioFile.swift */; };
 		1CB4AE36224FABE90078373B /* SettingAudioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */; };
-		1CB8349F225A7EFC00CE6260 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8349E225A7EFC00CE6260 /* Extension.swift */; };
+		1CB8349F225A7EFC00CE6260 /* UIViewController+Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB8349E225A7EFC00CE6260 /* UIViewController+Child.swift */; };
 		1CDC99B8223EB2DC0046CEBD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */; };
 		1CDC99BA223EB2DC0046CEBD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CDC99B9223EB2DC0046CEBD /* ViewController.swift */; };
 		1CDC99BD223EB2DC0046CEBD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CDC99BB223EB2DC0046CEBD /* Main.storyboard */; };
@@ -29,7 +29,7 @@
 		1C74C1A522466B4F00CFBD80 /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		1C9DEB90226F7D6D007956BD /* WorkerAudioFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerAudioFile.swift; sourceTree = "<group>"; };
 		1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingAudioViewController.swift; sourceTree = "<group>"; };
-		1CB8349E225A7EFC00CE6260 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		1CB8349E225A7EFC00CE6260 /* UIViewController+Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Child.swift"; sourceTree = "<group>"; };
 		1CDC99B4223EB2DC0046CEBD /* AudioNotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AudioNotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CDC99B7223EB2DC0046CEBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CDC99B9223EB2DC0046CEBD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 				1CDC99B9223EB2DC0046CEBD /* ViewController.swift */,
 				1CB4AE35224FABE90078373B /* SettingAudioViewController.swift */,
 				1CDC99BB223EB2DC0046CEBD /* Main.storyboard */,
-				1CB8349E225A7EFC00CE6260 /* Extension.swift */,
+				1CB8349E225A7EFC00CE6260 /* UIViewController+Child.swift */,
 				1C70A489227492F400F4AD33 /* CollectionView */,
 				1C9DEB8F226F7D14007956BD /* Model */,
 				1C9DEB92226F8080007956BD /* Support File */,
@@ -144,6 +144,7 @@
 				TargetAttributes = {
 					1CDC99B3223EB2DC0046CEBD = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -192,7 +193,7 @@
 				1CB4AE36224FABE90078373B /* SettingAudioViewController.swift in Sources */,
 				1CDC99B8223EB2DC0046CEBD /* AppDelegate.swift in Sources */,
 				1CDC99C0223EB2DC0046CEBD /* AudioNotes.xcdatamodeld in Sources */,
-				1CB8349F225A7EFC00CE6260 /* Extension.swift in Sources */,
+				1CB8349F225A7EFC00CE6260 /* UIViewController+Child.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +347,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com-Skadi.AudioNotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -363,7 +364,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com-Skadi.AudioNotes";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

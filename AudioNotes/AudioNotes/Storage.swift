@@ -7,20 +7,18 @@
 //
 
 import Foundation
-class Storage  {
-    
+
+class Storage {
     static var shared = Storage()
 
-    var numberOfRecords : Int = 0
-    {
-        didSet{
+    var numberOfRecords : Int = 0 {
+        didSet {
             print(numberOfRecords)
         }
     }
-    
-    var themes : [String] = []
-    {
-        didSet{
+
+    var themes : [String] = [] {
+        didSet {
             print(themes)
         }
     }

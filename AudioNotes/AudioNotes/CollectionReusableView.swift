@@ -9,7 +9,5 @@
 import UIKit
 
 class CollectionReusableView: UICollectionReusableView {
-
-        @IBOutlet weak var sectionHeaderlabel: UILabel!
-    
+    @IBOutlet weak var sectionHeaderlabel: UILabel!
 }
