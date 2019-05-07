@@ -20,7 +20,6 @@ extension UIViewController {
         guard parent != nil else {
             return
         }
-
         willMove(toParent: nil)
         removeFromParent()
         view.removeFromSuperview()

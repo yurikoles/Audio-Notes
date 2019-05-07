@@ -38,14 +38,17 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         } else {
             workerAudioFile.soundRecorder.stop()
             if let settingAudioViewController = settingAudioViewController {
-                add(settingAudioViewController)
+//                add(settingAudioViewController)
+                
+//                    Ручное добавление Чайлда
                 settingAudioViewController.view.frame = CGRect(origin: CGPoint.zero,
                                                                size: CGSize(width: 343,
                                                                             height: 406))
                 settingAudioViewController.view.center = view.center
             }
-
+            
             recordButtonOutlet.setTitle("Record", for: .normal)
+
             showSettings()
             UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount") //сохранение кол-во записей
             timer.invalidate()
@@ -71,9 +74,11 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     var timer = Timer()
     var time = 0
 
+//     var settingAudioViewController: SettingAudioViewController?
+//
+// Ручное добавление Чайлда
     lazy var settingAudioViewController: SettingAudioViewController? = {
-        return UIStoryboard(name: "Main", bundle: nil)
-            .instantiateViewController(withIdentifier: "SettingsVC") as? SettingAudioViewController
+        return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsVC") as? SettingAudioViewController
     }()
 
     var workerAudioFile = WorkerAudioFile()
