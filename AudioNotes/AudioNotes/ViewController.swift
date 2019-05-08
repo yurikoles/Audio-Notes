@@ -39,7 +39,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
             workerAudioFile.soundRecorder.stop()
             if let settingAudioViewController = settingAudioViewController {
 //                add(settingAudioViewController)
-                
+                 playButtonOutlet.isEnabled = true
+
 //                    Ручное добавление Чайлда
                 settingAudioViewController.view.frame = CGRect(origin: CGPoint.zero,
                                                                size: CGSize(width: 343,
@@ -58,7 +59,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBAction func playAction (_ sender: Any) {
         if playButtonOutlet.titleLabel?.text == "Play" {
             playButtonOutlet.setTitle("Stop", for: .normal)
-            recordButtonOutlet.isEnabled = false
             workerAudioFile.setupPlayer(viewController: self)
             workerAudioFile.soundPlayer.play()
             timer.invalidate()
