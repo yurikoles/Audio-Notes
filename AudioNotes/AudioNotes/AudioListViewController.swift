@@ -23,7 +23,7 @@ class AudioListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addThemsOutlet.layer.cornerRadius = addThemsOutlet.frame.size.height / 2
+        
         audioCollection.reloadData()
         audioCollection.delegate = self
         audioCollection.dataSource = self
@@ -33,6 +33,11 @@ class AudioListViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
        getThemes()
+    }
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+         addThemsOutlet.layer.cornerRadius = addThemsOutlet.frame.size.height / 2
     }
 }
 
