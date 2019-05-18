@@ -32,7 +32,7 @@ class AudioListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-       getThemes()
+//       getThemes()
     }
     
     override func viewWillLayoutSubviews() {
@@ -155,16 +155,16 @@ extension AudioListViewController: UICollectionViewDelegate, UICollectionViewDat
         }
     }
     
-    func getThemes() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let fethcRequest : NSFetchRequest<Themes> = Themes.fetchRequest()
-        
-        do {
-            Storage.shared.themes = try context.fetch(fethcRequest)
-        } catch {
-            print(error.localizedDescription)
-        }
-    }
+//    func getThemes() {
+//        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+//        let context = appDelegate.persistentContainer.viewContext
+//        
+//        let fethcRequest : NSFetchRequest<Themes> = Themes.fetchRequest()
+//        
+//        do {
+//            Storage.shared.themes = try context.fetch(fethcRequest)
+//        } catch {
+//            print(error.localizedDescription)
+//        }
+//    }
 }

@@ -130,6 +130,7 @@
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GyJ-lF-nYi">
                                 <rect key="frame" x="284" y="0.0" width="75" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Список">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -199,7 +200,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCz-uY-lH8">
-                                            <rect key="frame" x="61" y="8" width="277" height="33"/>
+                                            <rect key="frame" x="61" y="8" width="276.66666666666669" height="33"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="33" id="Rlp-LI-Wxf"/>
                                             </constraints>
@@ -285,29 +286,43 @@
                                     <action selector="CloseView:" destination="ZoT-M4-t3m" eventType="touchUpInside" id="d1G-mB-hrV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tbu-ir-HU9">
-                                <rect key="frame" x="148.66666666666666" y="188" width="46" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5DL-ck-r26">
+                                <rect key="frame" x="11.666666666666657" y="173" width="320" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="AeL-K5-Krb"/>
+                                </constraints>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сохранить в раздел :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33P-6o-DOI">
+                                <rect key="frame" x="16" y="132" width="311" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="oNh-Z7-Ocz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.94466091289999998" blue="0.49815684910000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Tbu-ir-HU9" firstAttribute="centerX" secondItem="M53-Zn-ZU4" secondAttribute="centerX" id="5ZY-9j-8hh"/>
-                            <constraint firstItem="Tbu-ir-HU9" firstAttribute="centerY" secondItem="M53-Zn-ZU4" secondAttribute="centerY" id="CeL-2b-wnU"/>
                             <constraint firstItem="KeX-iM-MbX" firstAttribute="leading" secondItem="Vkm-ta-Y4M" secondAttribute="leading" constant="24" id="Cjk-Gh-4wT"/>
+                            <constraint firstItem="33P-6o-DOI" firstAttribute="leading" secondItem="Vkm-ta-Y4M" secondAttribute="leading" constant="16" id="GeD-Tj-xOb"/>
                             <constraint firstItem="KeX-iM-MbX" firstAttribute="top" secondItem="Vkm-ta-Y4M" secondAttribute="top" id="Zhx-UV-4ax"/>
+                            <constraint firstItem="Vkm-ta-Y4M" firstAttribute="trailing" secondItem="33P-6o-DOI" secondAttribute="trailing" constant="16" id="rVR-Ou-EfK"/>
+                            <constraint firstItem="5DL-ck-r26" firstAttribute="centerX" secondItem="M53-Zn-ZU4" secondAttribute="centerX" id="srb-PN-sPS"/>
+                            <constraint firstItem="5DL-ck-r26" firstAttribute="top" secondItem="33P-6o-DOI" secondAttribute="bottom" constant="8" id="uyK-vY-Vv5"/>
+                            <constraint firstItem="5DL-ck-r26" firstAttribute="centerY" secondItem="M53-Zn-ZU4" secondAttribute="centerY" id="xzL-hJ-BtI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vkm-ta-Y4M"/>
                     </view>
                     <size key="freeformSize" width="343" height="406"/>
                     <connections>
                         <outlet property="CloseViewOutlet" destination="KeX-iM-MbX" id="gvb-b5-epc"/>
+                        <outlet property="selectThemesPickerView" destination="5DL-ck-r26" id="9Vi-lO-HbC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBh-lr-VEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="796" y="617"/>
+            <point key="canvasLocation" x="796" y="616.99507389162568"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="MKT-Ay-jFF">

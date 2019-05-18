@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import CoreData
 
 class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDelegate {
     @IBOutlet weak var audioListOutlet: UIButton!
@@ -86,6 +87,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         if let number = UserDefaults.standard.object(forKey: "audioCount") as? Int {
             Storage.shared.numberOfRecords = number
         }
+        
+        getThemes()
     }
 
     override func viewWillLayoutSubviews() {
@@ -125,4 +128,18 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     func hideSettings() {
         settingAudioView.isHidden = true
     }
+    
+    func getThemes() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        
+        let fethcRequest : NSFetchRequest<Themes> = Themes.fetchRequest()
+        
+        do {
+            Storage.shared.themes = try context.fetch(fethcRequest)
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
 }
+
