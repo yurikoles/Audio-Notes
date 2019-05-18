@@ -298,6 +298,9 @@
                                 <state key="normal" title=" Сохранить">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="saveButtonAction:" destination="ZoT-M4-t3m" eventType="touchUpInside" id="UAi-IP-cHV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHn-FS-jkX">
                                 <rect key="frame" x="0.0" y="373" width="171.66666666666666" height="33"/>
@@ -305,6 +308,9 @@
                                 <state key="normal" title="Удалить">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteButtonAction:" destination="ZoT-M4-t3m" eventType="touchUpInside" id="kuF-BK-Sdo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KeX-iM-MbX">
                                 <rect key="frame" x="0.0" y="44" width="30" height="30"/>

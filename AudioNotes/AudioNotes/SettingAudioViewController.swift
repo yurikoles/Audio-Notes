@@ -15,11 +15,16 @@ class SettingAudioViewController: UIViewController {
     @IBOutlet weak var deleteButtonOutlet: UIButton!
     @IBOutlet weak var CloseViewOutlet: UIButton!
     
+    @IBAction func deleteButtonAction(_ sender: UIButton) {
+        
+    }
+    @IBAction func saveButtonAction(_ sender: UIButton) {
+        closeChildView()
+    }
+    
     @IBAction func CloseView(_ sender: UIButton) {
         
-        if let parent = parent as? ViewController {
-            parent.hideSettings()
-        }
+       closeChildView()
     }
     
     @IBOutlet weak var selectThemesPickerView: UIPickerView!
@@ -60,4 +65,7 @@ extension SettingAudioViewController: UIPickerViewDelegate, UIPickerViewDataSour
         return Storage.shared.themes[row].currentThemes
     }
     
+    private func closeChildView(){
+        if let parent = parent as? ViewController {parent.hideSettings()}
+    }
 }
