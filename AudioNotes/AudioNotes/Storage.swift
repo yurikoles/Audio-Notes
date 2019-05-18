@@ -18,9 +18,5 @@ class Storage {
     }
 
     var themes : [Themes] = []
-//    {
-////        didSet {
-////            print(themes)
-////        }
-//    }
+
 }

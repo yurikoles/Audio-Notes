@@ -9,10 +9,14 @@
 import UIKit
 
 class SettingAudioViewController: UIViewController {
+    
+    
+    @IBOutlet weak var saveButtonOutlet: UIButton!
+    @IBOutlet weak var deleteButtonOutlet: UIButton!
     @IBOutlet weak var CloseViewOutlet: UIButton!
-
+    
     @IBAction func CloseView(_ sender: UIButton) {
-
+        
         if let parent = parent as? ViewController {
             parent.hideSettings()
         }
@@ -24,9 +28,20 @@ class SettingAudioViewController: UIViewController {
         super.viewDidLoad()
         selectThemesPickerView.dataSource = self
         selectThemesPickerView.delegate = self
-
+        
+    }
+    
+    
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        
+        saveButtonOutlet.layer.cornerRadius = saveButtonOutlet.frame.size.height / 2
+        deleteButtonOutlet.layer.cornerRadius = deleteButtonOutlet.frame.size.height / 2
     }
 }
+
+
 
 extension SettingAudioViewController: UIPickerViewDelegate, UIPickerViewDataSource{
     
