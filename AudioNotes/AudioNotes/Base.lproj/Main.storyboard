@@ -43,16 +43,6 @@
                                     <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qde-O2-lSe"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GyJ-lF-nYi">
-                                <rect key="frame" x="284" y="88" width="75" height="75"/>
-                                <color key="backgroundColor" red="0.46202266219999999" green="0.83828371759999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Список">
-                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <segue destination="aUt-Jx-jPw" kind="show" identifier="audioLisrSegue" id="lXz-ss-osj"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrY-dy-dra">
                                 <rect key="frame" x="111" y="211.33333333333334" width="64" height="33"/>
                                 <constraints>
@@ -100,7 +90,7 @@
                                     <constraint firstAttribute="height" constant="406" id="svx-an-jD2"/>
                                 </constraints>
                                 <connections>
-                                    <segue destination="ZoT-M4-t3m" kind="embed" id="e3Z-oE-29w"/>
+                                    <segue destination="ZoT-M4-t3m" kind="embed" id="g5K-Fq-WUo"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -109,24 +99,19 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rns-vh-Tjd" secondAttribute="bottom" constant="20" id="1Kd-kL-cA8"/>
                             <constraint firstItem="ixO-80-QMu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="20L-cs-uCh"/>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="2pp-BJ-8qF"/>
-                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="width" secondItem="Pi7-Be-jHY" secondAttribute="width" id="3NB-1o-0YD"/>
                             <constraint firstItem="Rns-vh-Tjd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4JX-TD-sRD"/>
                             <constraint firstItem="Pi7-Be-jHY" firstAttribute="top" secondItem="OtE-xt-tdW" secondAttribute="bottom" constant="-75.5" id="6GC-GT-Mbs"/>
                             <constraint firstItem="6lv-lO-Bno" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zrY-dy-dra" secondAttribute="trailing" constant="8" symbolic="YES" id="9Sq-Tn-Ob9"/>
                             <constraint firstItem="ixO-80-QMu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Egt-aS-rWl"/>
-                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="height" secondItem="Pi7-Be-jHY" secondAttribute="height" id="Evu-Ah-uHj"/>
                             <constraint firstItem="6lv-lO-Bno" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HFP-Fi-ADx"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IIq-Zk-H9E"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="m6h-LH-e2a" secondAttribute="trailing" constant="110" id="KG3-9x-yod"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="top" secondItem="zrY-dy-dra" secondAttribute="bottom" constant="40" id="OSk-PN-N2o"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="top" secondItem="6lv-lO-Bno" secondAttribute="bottom" constant="40" id="fEC-Pt-9V2"/>
-                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="hHD-1g-drj"/>
                             <constraint firstItem="zrY-dy-dra" firstAttribute="width" secondItem="m6h-LH-e2a" secondAttribute="width" id="hmJ-Ca-fKC"/>
                             <constraint firstItem="zrY-dy-dra" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="la5-tJ-Shc"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="nkT-ci-q9k"/>
-                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="oel-6q-cAi"/>
                             <constraint firstItem="m6h-LH-e2a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6lv-lO-Bno" secondAttribute="trailing" constant="8" symbolic="YES" id="sih-Zd-GZ0"/>
-                            <constraint firstItem="GyJ-lF-nYi" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="szQ-9t-gfX"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t94-AP-WpR"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pi7-Be-jHY" secondAttribute="trailing" constant="88" id="tAC-G7-D5G"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="top" secondItem="m6h-LH-e2a" secondAttribute="bottom" constant="40" id="tFY-7s-Swm"/>
@@ -134,7 +119,20 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7p1-2G-Qbt"/>
+                    <navigationItem key="navigationItem" id="7p1-2G-Qbt">
+                        <barButtonItem key="rightBarButtonItem" id="oN8-UX-ykM">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="GyJ-lF-nYi">
+                                <rect key="frame" x="284" y="0.0" width="75" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Список">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="aUt-Jx-jPw" kind="show" identifier="audioLisrSegue" id="lXz-ss-osj"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="audioListOutlet" destination="GyJ-lF-nYi" id="8va-hT-NuI"/>
                         <outlet property="playButtonOutlet" destination="Pi7-Be-jHY" id="QF9-Kt-6Qn"/>
@@ -305,7 +303,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBh-lr-VEo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-146" y="673"/>
+            <point key="canvasLocation" x="796" y="617"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4i5-bN-DNa">

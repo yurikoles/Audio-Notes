@@ -38,7 +38,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         } else {
             workerAudioFile.soundRecorder.stop()
             if let settingAudioViewController = settingAudioViewController {
-//                add(settingAudioViewController)
                  playButtonOutlet.isEnabled = true
 
 //                    Ручное добавление Чайлда
@@ -74,8 +73,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     var timer = Timer()
     var time = 0
 
-//     var settingAudioViewController: SettingAudioViewController?
-//
 // Ручное добавление Чайлда
     lazy var settingAudioViewController: SettingAudioViewController? = {
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SettingsVC") as? SettingAudioViewController
@@ -96,14 +93,12 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     }
 
     func settingUI() {
-        // playButtonOutlet.isEnabled = false
         recordButtonOutlet.layer.cornerRadius = recordButtonOutlet.frame.size.height / 2
         playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height / 2
         audioListOutlet.layer.cornerRadius = audioListOutlet.frame.size.height / 2
     }
 
     func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-        //playButtonOutlet.isEnabled = true
     }
 
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {

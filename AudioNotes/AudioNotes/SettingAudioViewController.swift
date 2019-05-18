@@ -12,14 +12,11 @@ class SettingAudioViewController: UIViewController {
     @IBOutlet weak var CloseViewOutlet: UIButton!
 
     @IBAction func CloseView(_ sender: UIButton) {
-//        remove()
-//        vc.hideSettings()
+
         if let parent = parent as? ViewController {
             parent.hideSettings()
         }
     }
-
-//   var vc = ViewController()
     
     
     override func viewDidLoad() {
