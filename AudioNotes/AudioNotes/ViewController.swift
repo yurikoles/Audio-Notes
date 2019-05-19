@@ -18,7 +18,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")
     }
     
-    @IBOutlet weak var playButtonOutlet: UIButton!
     @IBOutlet weak var recordButtonOutlet: UIButton!
     @IBOutlet weak var timerMinuteLabel: UILabel!
     @IBOutlet weak var timerSecondLabel: UILabel!
@@ -27,9 +26,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBAction func recordAction (_ sender: Any) {
         if recordButtonOutlet.titleLabel?.text == "Record" {
             workerAudioFile.setupRecorder(viewController: self)
-            workerAudioFile.soundRecorder.record()
+            workerAudioFile.soundRecorder?.record()
             recordButtonOutlet.setTitle("Stop", for: .normal)
-            playButtonOutlet.isEnabled = false
             
             timer = Timer.scheduledTimer(timeInterval: 1,
                                          target: self,
@@ -37,9 +35,8 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
                                          userInfo: nil,
                                          repeats: true)
         } else {
-            workerAudioFile.soundRecorder.stop()
+            workerAudioFile.soundRecorder?.stop()
             if let settingAudioViewController = settingAudioViewController {
-                playButtonOutlet.isEnabled = true
                 
                 //                    Ручное добавление Чайлда
                 settingAudioViewController.view.frame = CGRect(origin: CGPoint.zero,
@@ -56,20 +53,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
         }
     }
     
-    @IBAction func playAction (_ sender: Any) {
-        if playButtonOutlet.titleLabel?.text == "Play" {
-            playButtonOutlet.setTitle("Stop", for: .normal)
-            workerAudioFile.setupPlayer(viewController: self)
-            workerAudioFile.soundPlayer.play()
-            timer.invalidate()
-            time = 0
-            timeUISettin()
-        } else {
-            workerAudioFile.soundPlayer.stop()
-            playButtonOutlet.setTitle("Play", for: .normal)
-            recordButtonOutlet.isEnabled = false
-        }
-    }
     
     var timer = Timer()
     var time = 0
@@ -97,7 +80,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     func settingUI() {
         recordButtonOutlet.layer.cornerRadius = recordButtonOutlet.frame.size.height / 2
-        playButtonOutlet.layer.cornerRadius = playButtonOutlet.frame.size.height / 2
         audioListOutlet.layer.cornerRadius = audioListOutlet.frame.size.height / 2
     }
     
@@ -106,7 +88,6 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     
     func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
         recordButtonOutlet.isEnabled = true
-        playButtonOutlet.setTitle("Play", for: .normal)
     }
     
     @objc private func timerDidEnded() {

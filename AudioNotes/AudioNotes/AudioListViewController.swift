@@ -68,8 +68,7 @@ extension AudioListViewController: UICollectionViewDelegate, UICollectionViewDat
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView,didSelectItemAt indexPath: IndexPath) {
         print("tab \(indexPath.row+1)")
         
         let path = workerAudioFile.getDocumetnsDirector()
@@ -77,7 +76,7 @@ extension AudioListViewController: UICollectionViewDelegate, UICollectionViewDat
         
         do {
             workerAudioFile.soundPlayer = try AVAudioPlayer(contentsOf: path)
-            workerAudioFile.soundPlayer.play()
+            workerAudioFile.soundPlayer?.play()
         } catch {
             
         }

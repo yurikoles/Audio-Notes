@@ -17,7 +17,12 @@ class SettingAudioViewController: UIViewController {
     
     @IBAction func deleteButtonAction(_ sender: UIButton) {
         
+        workerAudioFile.soundRecorder?.deleteRecording()
+        closeChildView()
+        
     }
+    
+    
     @IBAction func saveButtonAction(_ sender: UIButton) {
         closeChildView()
     }
@@ -29,12 +34,16 @@ class SettingAudioViewController: UIViewController {
     
     @IBOutlet weak var selectThemesPickerView: UIPickerView!
     
+    
+    var workerAudioFile = WorkerAudioFile()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         selectThemesPickerView.dataSource = self
         selectThemesPickerView.delegate = self
         
     }
+    
     
     
     

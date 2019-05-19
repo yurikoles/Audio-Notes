@@ -32,17 +32,6 @@
                                     <action selector="recordAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8vf-Wy-ETZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pi7-Be-jHY">
-                                <rect key="frame" x="212" y="452.33333333333331" width="75" height="74.999999999999943"/>
-                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="Pi7-Be-jHY" secondAttribute="height" multiplier="1:1" id="Ks5-PF-q81"/>
-                                </constraints>
-                                <state key="normal" title="Play"/>
-                                <connections>
-                                    <action selector="playAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qde-O2-lSe"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zrY-dy-dra">
                                 <rect key="frame" x="111" y="211.33333333333334" width="64" height="33"/>
                                 <constraints>
@@ -98,9 +87,7 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rns-vh-Tjd" secondAttribute="bottom" constant="20" id="1Kd-kL-cA8"/>
                             <constraint firstItem="ixO-80-QMu" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="20L-cs-uCh"/>
-                            <constraint firstItem="Pi7-Be-jHY" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" multiplier="0.2" id="2pp-BJ-8qF"/>
                             <constraint firstItem="Rns-vh-Tjd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4JX-TD-sRD"/>
-                            <constraint firstItem="Pi7-Be-jHY" firstAttribute="top" secondItem="OtE-xt-tdW" secondAttribute="bottom" constant="-75.5" id="6GC-GT-Mbs"/>
                             <constraint firstItem="6lv-lO-Bno" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="zrY-dy-dra" secondAttribute="trailing" constant="8" symbolic="YES" id="9Sq-Tn-Ob9"/>
                             <constraint firstItem="ixO-80-QMu" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Egt-aS-rWl"/>
                             <constraint firstItem="6lv-lO-Bno" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HFP-Fi-ADx"/>
@@ -113,9 +100,7 @@
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="nkT-ci-q9k"/>
                             <constraint firstItem="m6h-LH-e2a" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6lv-lO-Bno" secondAttribute="trailing" constant="8" symbolic="YES" id="sih-Zd-GZ0"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="t94-AP-WpR"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Pi7-Be-jHY" secondAttribute="trailing" constant="88" id="tAC-G7-D5G"/>
                             <constraint firstItem="OtE-xt-tdW" firstAttribute="top" secondItem="m6h-LH-e2a" secondAttribute="bottom" constant="40" id="tFY-7s-Swm"/>
-                            <constraint firstItem="Pi7-Be-jHY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yLz-zV-9AP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -142,7 +127,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="audioListOutlet" destination="GyJ-lF-nYi" id="8va-hT-NuI"/>
-                        <outlet property="playButtonOutlet" destination="Pi7-Be-jHY" id="QF9-Kt-6Qn"/>
                         <outlet property="recordButtonOutlet" destination="OtE-xt-tdW" id="n5q-qL-LVD"/>
                         <outlet property="settingAudioView" destination="ixO-80-QMu" id="JuH-PA-s9z"/>
                         <outlet property="timerMinuteLabel" destination="zrY-dy-dra" id="A3G-yv-Igs"/>
