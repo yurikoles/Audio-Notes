@@ -51,7 +51,7 @@ extension AudioListViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView,
                         numberOfItemsInSection section: Int) -> Int {
         if section == 0 {
-            let count = Storage.shared.numberOfRecords
+            let count = Storage.shared.arrayUrl.count
             return count
         } else {
             return 5
@@ -71,11 +71,12 @@ extension AudioListViewController: UICollectionViewDelegate, UICollectionViewDat
     func collectionView(_ collectionView: UICollectionView,didSelectItemAt indexPath: IndexPath) {
         print("tab \(indexPath.row+1)")
         
-        let path = workerAudioFile.getDocumetnsDirector()
-            .appendingPathComponent("Records\(indexPath.row + 1).m4a")
+        let currentRecord = Storage.shared.arrayUrl[indexPath.row]
+//        let path = workerAudioFile.getDocumetnsDirector()
+//            .appendingPathComponent("Records\(indexPath.row + 1).m4a")
         
         do {
-            workerAudioFile.soundPlayer = try AVAudioPlayer(contentsOf: path)
+            workerAudioFile.soundPlayer = try AVAudioPlayer(contentsOf: currentRecord)
             workerAudioFile.soundPlayer?.play()
         } catch {
             
@@ -97,7 +98,7 @@ extension AudioListViewController: UICollectionViewDelegate, UICollectionViewDat
             
             let themes = Storage.shared.themes[indexPath.section]
             sectionHeader.sectionHeaderlabel.text = themes.currentThemes // заголовок секций
-            //            sectionHeader.sectionHeaderlabel.text = "Section \(indexPath.section)"
+          
             return sectionHeader
         }
         
@@ -116,7 +117,6 @@ extension AudioListViewController: UICollectionViewDelegate, UICollectionViewDat
                                         
                                         if alertController.textFields != nil
                                             && alertController.textFields![0].text != nil {
-                                            //Storage.shared.themes.append(String(alertController.textFields![0].text!))
                                             self.saveThemes(themes: String(alertController.textFields![0].text!))
                                         }
                                         self.audioCollection.reloadData()
@@ -137,7 +137,7 @@ extension AudioListViewController: UICollectionViewDelegate, UICollectionViewDat
     
     //  - MARK : Work with CoreData
     
-    func saveThemes(themes: String) {
+   private func saveThemes(themes: String) {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext

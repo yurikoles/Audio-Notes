@@ -14,8 +14,9 @@ class ViewController: UIViewController, AVAudioRecorderDelegate, AVAudioPlayerDe
     @IBOutlet weak var audioListOutlet: UIButton!
     
     @IBAction func clearAllAudio(_ sender: UIButton) {
-        Storage.shared.numberOfRecords = 0
-        UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")
+//        Storage.shared.numberOfRecords = 0
+//        UserDefaults.standard.set(Storage.shared.numberOfRecords, forKey: "audioCount")
+         Storage.shared.arrayUrl.removeAll()
     }
     
     @IBOutlet weak var recordButtonOutlet: UIButton!

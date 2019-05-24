@@ -10,7 +10,10 @@ import Foundation
 
 class Storage {
     static var shared = Storage()
-
+    
+    
+    var arrayUrl : [URL] = []
+    
     var numberOfRecords : Int = 0 {
         didSet {
             print(numberOfRecords)
@@ -19,4 +22,5 @@ class Storage {
 
     var themes : [Themes] = []
 
+    
 }
