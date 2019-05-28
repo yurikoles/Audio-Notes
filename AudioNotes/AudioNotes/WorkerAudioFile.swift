@@ -23,10 +23,9 @@ class WorkerAudioFile {
         return paths[0]
     }
 
-    func setupRecorder(viewController: UIViewController ) {
-        Storage.shared.numberOfRecords += 1
-        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(Storage.shared.numberOfRecords).m4a")
-        Storage.shared.arrayUrl.append(audioFileName)
+    func setupRecorder(viewController: UIViewController ) -> Audio? {
+        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(Storage.audios.count).m4a")
+
         let recordSetting = [AVFormatIDKey : kAudioFormatAppleLossless,
                              AVEncoderAudioQualityKey: AVAudioQuality.max.rawValue,
                              AVEncoderBitRateKey : 320000,
@@ -37,14 +36,16 @@ class WorkerAudioFile {
             soundRecorder = try AVAudioRecorder(url: audioFileName, settings: recordSetting)
             soundRecorder?.delegate = viewController as? AVAudioRecorderDelegate
             soundRecorder?.prepareToRecord()  //метод подготовки записи: создает файл и готовится к записи
+            return Storage.saveAudio(audioFileName)
         } catch {
             print(error)
+            return nil
         }
     }
 
     //по не используется
     func setupPlayer(viewController: UIViewController) {
-        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(Storage.shared.numberOfRecords).m4a")
+        let audioFileName = getDocumetnsDirector().appendingPathComponent("Records\(Storage.audios.count).m4a")
 
         print(audioFileName)
 

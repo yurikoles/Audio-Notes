@@ -163,13 +163,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zgv-SW-KHI">
-                                                    <rect key="frame" x="29" y="39.666666666666664" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="27.666666666666668" y="39.666666666666664" width="44.666666666666657" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.0" green="0.97680455450000003" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstItem="Zgv-SW-KHI" firstAttribute="centerX" secondItem="bn4-Bu-PHL" secondAttribute="centerX" id="NVR-oS-K2o"/>
                                             <constraint firstItem="Zgv-SW-KHI" firstAttribute="centerY" secondItem="bn4-Bu-PHL" secondAttribute="centerY" id="WNs-YZ-wib"/>

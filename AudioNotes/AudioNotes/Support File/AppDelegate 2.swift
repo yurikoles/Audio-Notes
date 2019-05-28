@@ -69,13 +69,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-    
+
     func getThemes() {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let context = appDelegate.persistentContainer.viewContext
-        
+
         let fethcRequest : NSFetchRequest<Themes> = Themes.fetchRequest()
-        
+
         do {
             Storage.shared.themes = try context.fetch(fethcRequest)
         } catch {

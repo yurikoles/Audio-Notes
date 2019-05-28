@@ -11,11 +11,17 @@ import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    static var shared: AppDelegate {
+       return UIApplication.shared.delegate as! AppDelegate
+    }
+
+    static var context: NSManagedObjectContext {
+        return shared.persistentContainer.viewContext
+    }
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        getThemes()
         return true
     }
 
@@ -67,18 +73,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let nserror = error as NSError
                 fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
             }
-        }
-    }
-    func getThemes() {
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        let context = appDelegate.persistentContainer.viewContext
-        
-        let fethcRequest : NSFetchRequest<Themes> = Themes.fetchRequest()
-        
-        do {
-            Storage.shared.themes = try context.fetch(fethcRequest)
-        } catch {
-            print(error.localizedDescription)
         }
     }
 }

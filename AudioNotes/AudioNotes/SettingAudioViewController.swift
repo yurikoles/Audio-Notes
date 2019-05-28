@@ -9,73 +9,80 @@
 import UIKit
 
 class SettingAudioViewController: UIViewController {
-    
-    
+
     @IBOutlet weak var saveButtonOutlet: UIButton!
     @IBOutlet weak var deleteButtonOutlet: UIButton!
     @IBOutlet weak var CloseViewOutlet: UIButton!
-    
+
     @IBAction func deleteButtonAction(_ sender: UIButton) {
-        
+
         workerAudioFile.soundRecorder?.deleteRecording()
         closeChildView()
-        
     }
-    
-    
+
+    func setThemeForAudio() {
+        let theme = Storage.themes[selectThemesPickerView.selectedRow(inComponent: 0)]
+        let currentAudio = (parent as? ViewController)?.currentAudio
+        currentAudio?.theme = theme
+        do {
+           try AppDelegate.context.save()
+        } catch {
+            print("can't set theme for audio")
+        }
+    }
+
     @IBAction func saveButtonAction(_ sender: UIButton) {
+        setThemeForAudio()
         closeChildView()
 //        Storage.shared.arrayUrl.last 
     }
-    
+
     @IBAction func CloseView(_ sender: UIButton) {
-        
        closeChildView()
     }
-    
+
     @IBOutlet weak var selectThemesPickerView: UIPickerView!
-    
-    
+
     var workerAudioFile = WorkerAudioFile()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         selectThemesPickerView.dataSource = self
         selectThemesPickerView.delegate = self
-        
     }
-    
-    
-    
-    
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        selectThemesPickerView.reloadAllComponents()
+    }
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-        
+
         saveButtonOutlet.layer.cornerRadius = saveButtonOutlet.frame.size.height / 2
         deleteButtonOutlet.layer.cornerRadius = deleteButtonOutlet.frame.size.height / 2
     }
 }
 
+extension SettingAudioViewController: UIPickerViewDelegate, UIPickerViewDataSource {
 
-
-extension SettingAudioViewController: UIPickerViewDelegate, UIPickerViewDataSource{
-    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        
-        return  Storage.shared.themes.count
+        let count = Storage.themes.count
+        print("components count \(count)")
+        return count
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
+
         //        let s = Storage.shared.themes[row].currentThemes
-        return Storage.shared.themes[row].currentThemes
+        return Storage.themes[row].name
     }
-    
-    private func closeChildView(){
+
+    private func closeChildView() {
         if let parent = parent as? ViewController {parent.hideSettings()}
     }
 }
